@@ -12,7 +12,7 @@ export const Footer = () => {
         </h1>
         <p className="text-xs">Crafted by 
           <Link to="https://github.com/corneliajude" title="GitHub"> Cornelia&nbsp; 
-            <BsSuitHeart className="inline" size={12}></BsSuitHeart>
+            <BsSuitHeart className="inline-block  text-fuchsia-600" size={12}></BsSuitHeart>
           </Link>
         </p>
       </div>

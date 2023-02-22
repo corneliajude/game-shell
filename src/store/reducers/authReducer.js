@@ -1,5 +1,5 @@
 const initialState = {
-    authenticated: false,
+    authenticated: true,
     user: {
         firstName: 'Twix',
         lastName: 'the Parrot',
@@ -8,5 +8,13 @@ const initialState = {
 export const authReducer = (state = initialState, action) => {
     const { type } = action;
 
-    return state;
-}
+    switch(type) {
+        case 'auth/logOut':
+            return {
+                ...state,
+                authenticated: false,
+            };
+            default:
+                return state;
+    }
+};

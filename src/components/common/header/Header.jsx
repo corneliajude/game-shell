@@ -15,6 +15,6 @@ export const Header = () => {
       <div>
         <UserControls></UserControls>
       </div>
-    </div>
+    </div >
   );
 };

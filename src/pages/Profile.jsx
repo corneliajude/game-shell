@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Creature, ProfileForm, UserProfile } from '../components/common/profile';
 import { AuthorizedLayout } from '../layouts';
 import { Layout } from '../layouts/Layout';
 
@@ -25,10 +26,24 @@ export const Profile = () => {
                         <h1 className="text-3xl font-bold mt-4">Profile</h1>
                         {firstName}
                         {lastName}
+
+                        <section className="grid grid-cols-12 mb-4">
+                            <div className="col-span-8">
+                                <UserProfile></UserProfile>
+                            </div>
+
+                            <div className="col-span-4">
+                                <Creature></Creature>
+                            </div>
+                        </section>
+
+                        <section className="mt-4 lg:w-1/4 lg:mt-12 mx-auto">
+                            <ProfileForm></ProfileForm>
+                        </section>
                     </header>
                 </div>
             </AuthorizedLayout>
         </Layout>
-    )
+    );
 };
 

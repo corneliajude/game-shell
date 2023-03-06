@@ -5,6 +5,7 @@ import {
     setUser,
     setUserStats,
 } from '../store/actions/auth';
+import { createProfile, readProfile, setUserProfile } from '../store/actions/profile/profileActions';
 import store from './../store';
 let initialized = false;
 const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
@@ -49,6 +50,19 @@ export const initializeGoogleAuth = async () => {
                         .catch(() => {
                             // daca user nu exista - creeam
                             store.dispatch(createUser(id));
+                        });
+
+                    store.dispatch(readProfile(id))
+                        .then(({ colors }) => {
+                            // setUserProfile
+                            store.dispatch(
+                                setUserProfile({
+                                    colors,
+                                }),
+                            );
+                        })
+                        .catch(() => {
+                            store.dispatch(createProfile(id));
                         });
                 },
                 scope: 'email profile',

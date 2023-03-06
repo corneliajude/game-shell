@@ -8,7 +8,7 @@ const mainReducer = combineReducers({
     profile: profileReducer,
 });
 
-// recipe * monkey patching*
+// recipe * monkey patching *
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     mainReducer,

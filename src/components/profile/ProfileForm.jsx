@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from '../common/ui';
-import { TbDeviceFloppy } from 'react-icons/tb';
+import { Button } from './../common/ui';
+import { TbDeviceFloppy, TbFidgetSpinner } from 'react-icons/tb';
 import {
     setUserProfile,
     updateProfile,
 } from './../../store/actions/profile/profileActions';
+import { useState } from 'react';
 
 export const ProfileForm = () => {
     const dispatch = useDispatch();
+    const [busy, setBusy] = useState(false);
+
     const { mainColor, secondaryColor, eyeColor } = useSelector(({ profile }) => {
         return profile.colors;
     });
@@ -38,10 +41,12 @@ export const ProfileForm = () => {
         );
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = async (event) => {
         event.preventDefault();
 
-        dispatch(
+        setBusy(true);
+
+        await dispatch(
             updateProfile(userId, {
                 colors: {
                     mainColor,
@@ -50,6 +55,8 @@ export const ProfileForm = () => {
                 },
             }),
         );
+
+        setBusy(false);
     };
 
     return (
@@ -92,8 +99,17 @@ export const ProfileForm = () => {
 
             <div className="text-center">
                 <Button type="submit" title="Save" className="gap-2 items-center">
-                    <TbDeviceFloppy></TbDeviceFloppy>
-                    Save
+                    {busy ? (
+                        <>
+                            <TbFidgetSpinner className="animate-spin"></TbFidgetSpinner>
+                            Saving
+                        </>
+                    ) : (
+                        <>
+                            <TbDeviceFloppy></TbDeviceFloppy>
+                            Save
+                        </>
+                    )}
                 </Button>
             </div>
         </form>

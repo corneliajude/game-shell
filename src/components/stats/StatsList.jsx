@@ -1,19 +1,21 @@
-import { useSelector } from "react-redux";
-import { FcGlobe } from "react-icons/fc";
+import { FcBarChart, FcLike, FcDisapprove } from "react-icons/fc";
 
 
-export const StatsList = () => {
-    const stats = useSelector(({ auth }) => {
-        return auth.stats;
-    });
-
-    const { gamesPlayed, gamesWon, gamesLost } = stats;
-
+export const StatsList = ({ played = 0, won = 0, lost = 0 }) => {
     return (
         <ul className="border rounded-md shadow">
-            <li> <FcGlobe className="inline-block"></FcGlobe> Games Played: {gamesPlayed}</li>
-            <li>Games Lost: {gamesLost}</li>
-            <li>Games Won: {gamesWon}</li>
+            <li className="mt-2 mb-2">
+                <FcBarChart className="inline-block mx-2" fontSize={24}></FcBarChart>
+                Played: {played}
+            </li>
+            <li className="mb-2">
+                <FcDisapprove className="inline-block mx-2" fontSize={24}></FcDisapprove>
+                Lost: {lost}
+            </li>
+            <li className="mb-2">
+                <FcLike className="inline-block mx-2" fontSize={24}></FcLike>
+                Won: {won}
+            </li>
         </ul>
     );
 };

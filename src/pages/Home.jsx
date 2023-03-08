@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Dashbroard } from '../components/common/Dashboard';
 import { Button } from '../components/common/ui';
-import { StatsList } from '../components/stats';
 import { AuthorizedLayout, Layout } from '../layouts';
 
 export const Home = () => {
@@ -13,7 +13,7 @@ export const Home = () => {
 
         <AuthorizedLayout>
           <div className='py-4'>
-            <StatsList></StatsList>
+            <Dashbroard></Dashbroard>
 
             <div className='text-center mt-4'>
               <Link to="/play" title='Play'>

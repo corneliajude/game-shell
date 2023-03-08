@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from './../ui/Button';
+import { Button } from '../common/ui';
 import { TbDeviceFloppy } from 'react-icons/tb';
 import {
     setUserProfile,
     updateProfile,
-} from './../../../store/actions/profile/profileActions';
+} from './../../store/actions/profile/profileActions';
 
 export const ProfileForm = () => {
     const dispatch = useDispatch();

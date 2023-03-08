@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Creature, ProfileForm, UserProfile } from '../components/common/profile';
+import { Creature, ProfileForm, UserProfile } from '../components/profile';
 import { AuthorizedLayout } from '../layouts';
 import { Layout } from '../layouts/Layout';
 

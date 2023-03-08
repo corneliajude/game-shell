@@ -7,3 +7,4 @@ const initialState = {
 export const gameReducer = (state = initialState, { type, payload }) => {
     return state;
 };
+

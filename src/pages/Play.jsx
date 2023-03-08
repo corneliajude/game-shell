@@ -1,6 +1,6 @@
-import { Game } from '../components/game/Game';
 import { AuthorizedLayout, Layout } from '../layouts';
-import { Creature } from './../components/common/profile/Creature';
+import { Creature } from './../components/profile';
+import { Game } from './../components/game';
 
 export const Play = () => {
     return (
@@ -24,5 +24,4 @@ export const Play = () => {
             </AuthorizedLayout>
         </Layout>
     );
-}
-
+};

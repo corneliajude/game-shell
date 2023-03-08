@@ -18,7 +18,7 @@ export const Game = () => {
             </Button>
 
             <Button
-                skin="success"
+                sking="success"
                 title="Win game"
                 onClick={() => {
                     dispatch(resolveGame(true));

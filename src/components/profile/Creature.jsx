@@ -2,11 +2,11 @@ import { css } from '@emotion/css';
 import { useSelector } from 'react-redux';
 
 export const Creature = () => {
-    const { mainColor, secondaryColor, eyeColor } = useSelector(({ profile }) => {
-        return profile.colors;
-    });
+  const { mainColor, secondaryColor, eyeColor } = useSelector(({ profile }) => {
+    return profile.colors;
+  });
 
-    const cssClass = css`
+  const cssClass = css`
     border: 1px solid red;
 
     div {
@@ -26,11 +26,11 @@ export const Creature = () => {
     }
   `;
 
-    return (
-        <div className={cssClass}>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    );
+  return (
+    <div className={cssClass}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 };
